@@ -7,7 +7,7 @@ void main(){
     printf("\n*Input should be '1' or '0'* \n");   
         for(i= 0; i<10; i++){
             scanf("%d",&in[i]);
-            if(in[i]>1){
+            if(in[i]>1 && in[i] == 01){
                 printf("\n**wrong input**\n");
                 exit(0);
             }
