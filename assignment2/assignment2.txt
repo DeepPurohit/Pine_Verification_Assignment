@@ -1,0 +1,314 @@
+Program 1: ASCII Characters
+
+#include<stdio.h>
+
+int main(){
+
+    int i;
+    printf("Decimal \t Character\n");
+    for(i=0; i<128; i++){
+        printf(" %d \t \t%c\n",i,i);
+    }
+return 0;
+}
+
+Program 2: Decimal to Octal
+
+#include<stdio.h>
+int main(){
+    int dec, oct;
+
+    printf("Enter a decimal no.\n");
+    scanf("%d",&dec);
+
+    printf("Octal of %d is %o\n",dec,dec);
+
+    return 0;
+}
+
+Program 3: Factorial
+
+#include<stdio.h>
+
+int main(){
+    int n,i;
+    unsigned long long int fact=1;
+
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    i = n;
+    while(i>=1){
+        fact *= i--;
+    }
+
+    printf("\n\bFactorial of %d is %d\n",n,fact);
+
+}
+
+Program 4: Grace marks
+
+#include<stdio.h>
+
+int main(){
+
+    int class, fail;
+
+    printf("Enter the class obtained by the student\n");
+    scanf("%d",&class);
+    printf("\nEnter the no. of subjects in which he is fail\n");
+    scanf("%d",&fail);
+
+    switch(class){
+        case 1:
+                if(fail > 3){
+                    printf("\nThe student doesn't gets any grace\n");
+                    break;
+                }
+                else
+                    printf("\nThe student gets %d grace marks\n",fail*5);
+                break;
+        case 2:
+                if(fail > 2){
+                    printf("\nThe student doesn't gets any grace\n");
+                    break;
+                }
+                else
+                    printf("\nThe student gets %d grace marks\n",fail*4);
+                break;
+        case 3:
+                if(fail > 1){
+                    printf("\nThe student doesn't gets any grace\n");
+                    break;
+                }
+                else
+                    printf("\nThe student gets %d grace marks\n",fail*5);
+                break;
+        default: printf("\n\n***** Invalid Class *****\n\n");
+    }
+
+    return 0;
+}
+
+program 5: Greater number
+
+#include<stdio.h>
+
+int main(){
+
+    int a[3], res;
+
+    printf("Enter 3 no.s\n");
+    for(int i=0; i<3; i++)
+        scanf("%d",&a[i]);
+    res = a[0]>a[1]?(a[0]>a[2]?a[0]:a[2]):(a[1]>a[2]?a[1]:a[2]);
+    printf("%d is greatest no.\n",res);
+    return 0;
+}
+
+Program 6: Installments
+
+#include <stdio.h>
+#include <math.h>
+ 
+int main() 
+{
+    float principal, rate, time, per_month;
+ 
+    printf("Enter principal: ");
+    scanf("%f",&principal);
+ 
+    printf("Enter rate: ");
+    scanf("%f",&rate);
+ 
+    printf("Enter time in year: ");
+    scanf("%f",&time);
+ 
+    rate=rate/(12*100); 
+    time=time*12; 
+ 
+ 
+    per_month= (principal*rate*pow(1+rate,time))/(pow(1+rate,time)-1);
+ 
+    printf("Monthly Installments are = %.4f\n",per_month);
+     
+    return 0;
+}
+
+Program 7: Leap year
+
+
+#include<stdio.h>
+
+int main(){
+    int year;
+
+    printf("Enter a year\n");
+    scanf("%d",&year);
+
+    if(year % 400 == 0)
+            printf("%d is Leap Yyear\n",year);
+
+    else if(year % 100 == 0)
+            printf("%d is not a Leap Yyear\n",year);
+        
+    else if(year % 4 == 0)
+            printf("%d is Leap Year\n",year);
+    else
+        printf("%d is not a Leap Year\n",year);
+
+    
+}
+
+
+Program 8: LowerCase/UpperCase
+
+#include<stdio.h>
+
+void main (){
+    char ch;
+    printf("Enter an Alphabet\n");
+    scanf("%c",&ch);
+
+    if(ch >= 65 && ch <= 91)
+        printf("%c is Uppercase\n",ch);
+    else if(ch >= 97 && ch <= 123)
+        printf("%c is Lowercase\n",ch);
+    else
+        printf("%c is not an Alphabet\n",ch);
+
+}
+
+
+program 9: Serving Time of Machine
+
+#include<stdio.h>
+
+int main(){
+
+    int year = 1, alternative, investments = 0;
+
+    alternative = 90;
+
+    while(alternative>investments){
+        year++;
+        alternative = 90*year;  //9% of 1000 = 90
+        investments = (1000*year)-4000; //purchased at 6000 and condemned at 2000
+    }
+
+    printf("\nThe machine will serve for %d years\n",year);
+    
+    return 0;
+}
+
+
+Program 10: Match Stick Game
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+
+    int match_sticks = 21, user, comp, i;
+    system("clear");
+    printf("************************************************\n");
+    printf("\t\tWelcome To MatchStick Game\n");
+
+    printf("******* Rules ********\n");
+    printf("->There are 21 matchsticks.\n");
+    printf("->The computer asks the player to pick 1, 2, 3 or 4 matchsticks.\n");
+    printf("->After the person picks, the computer does its picking.\n");
+    printf("->Whoever is forced to pick up the last matchstick loses the game.\n");
+
+    while(match_sticks>=1){
+        printf("\n\nNumber of match sticks available:\t%d",match_sticks);
+        printf("\nYour Turn\n");
+        printf("Enter the no. of match sticks(1-4):\t");
+        scanf("%d",&user);
+        if(user>4){
+            printf("You loosed\n");
+            break;
+        }
+
+        comp = 5-user;
+        printf("\nComputer's Turn\n");
+        printf("Computer choosed %d no. of match sticks\n",comp);
+
+        match_sticks = match_sticks - user - comp;
+
+        if(match_sticks==1)
+            break;
+    }
+    match_sticks--;
+    printf("\nComputer wins\n");
+
+    return 0;
+}
+
+Program 11: Calculate Overtime
+
+#include<stdio.h>
+
+int main(){
+    int i, total_work_time, over_time = 0, over_time_pay = 0;
+
+    for(i=0; i<10; i++){
+        printf("Enter the total work time of employee %d :  ",i+1);
+        scanf("%d",&total_work_time);
+
+        over_time = 0;
+        over_time_pay = 0;
+
+
+        if(total_work_time>40){
+            over_time = total_work_time - 40;
+            over_time_pay = over_time_pay + over_time*12;
+        }
+        else{
+            over_time = 0;
+            over_time_pay = 0;
+        }
+        printf("Employe %d will get %d over time pay\n",i+1,over_time_pay);
+    }
+
+}
+
+Program 12: Prime number between 1-300
+
+#include<stdio.h>
+
+int main(){
+
+    int i=2,j,count;
+
+    while(i<=300){
+        count = 0;
+        for(j=1; j<=i; j++){
+            if(i%j==0)
+                count++;
+        }
+        if(count == 2)
+            printf("%d is Prime no.\n",i);
+        i++;
+    }
+
+    return 0;
+}
+
+
+program 13: Special Characters
+
+#include<stdio.h>
+
+void main (){
+    char ch;
+    printf("Enter a character\n");
+    scanf("%c",&ch);
+
+    if(ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122)
+        printf("%c is Alphabet\n",ch);
+    else if(ch >= 47 && ch <= 57)
+        printf("%c is Number\n",ch);
+    else
+        printf("%c is a Special Character\n",ch);
+
+}
+
